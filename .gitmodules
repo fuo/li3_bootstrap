@@ -8,4 +8,5 @@
     url = https://github.com/michaelhue/li3_flash_message.git
 [submodule "libraries/li3b_core"]
     path = libraries/li3b_core
-    url = https://github.com/tmaiaroto/li3b_core.git
+    # url = https://github.com/tmaiaroto/li3b_core.git
+    url = git@github.com:fuo/li3b_core.git
