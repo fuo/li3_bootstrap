@@ -27,6 +27,11 @@ echo "Install li3_blog library..."
 echo ""
 
 echo ""
+echo "Update all submodules recursively..."
+git submodule foreach git pull origin master
+echo ""
+
+echo ""
 echo "Create a symlink for www => webroot..."
 ln -s webroot www
 echo ""
