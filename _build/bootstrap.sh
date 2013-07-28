@@ -7,6 +7,26 @@ echo ""
 echo "Starting the installation process, hold on to your butts..."
 echo ""
 
-exec git clone git://github.com/tmaiaroto/li3_bootstrap.git .
-clear;
-exec _build/setup.sh;
+git clone git://github.com/tmaiaroto/li3_bootstrap.git .
+
+./_build/setup.sh
+
+echo ""
+echo "Install li3b_users library..."
+./li3 bootstrap install li3b_users
+echo ""
+
+echo ""
+echo "Install li3b_gallery library..."
+./li3 bootstrap install li3b_gallery
+echo ""
+
+echo ""
+echo "Install li3_blog library..."
+./li3 bootstrap install li3b_blog
+echo ""
+
+echo ""
+echo "Create a symlink for www => webroot..."
+ln -s webroot www
+echo ""

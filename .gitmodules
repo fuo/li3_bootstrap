@@ -1,9 +1,11 @@
 [submodule "libraries/lithium"]
-	path = libraries/lithium
-	url = git://github.com/UnionOfRAD/lithium.git
+    path = libraries/lithium
+    # url = git://github.com/UnionOfRAD/lithium.git
+    url = https://github.com/UnionOfRAD/lithium.git
 [submodule "libraries/li3_flash_message"]
-	path = libraries/li3_flash_message
-	url = git://github.com/michaelhue/li3_flash_message.git
+    path = libraries/li3_flash_message
+    # url = git://github.com/michaelhue/li3_flash_message.git
+    url = https://github.com/michaelhue/li3_flash_message.git
 [submodule "libraries/li3b_core"]
-	path = libraries/li3b_core
-	url = https://github.com/tmaiaroto/li3b_core.git
+    path = libraries/li3b_core
+    url = https://github.com/tmaiaroto/li3b_core.git

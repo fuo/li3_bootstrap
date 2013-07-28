@@ -25,5 +25,5 @@ alias li3='./li3'
 echo ""
 
 echo ""
-echo "Installation complete."
-echo ""
+echo "Installation the core bootstrap complete!"
+echo "Starting to intall the plugins..."
