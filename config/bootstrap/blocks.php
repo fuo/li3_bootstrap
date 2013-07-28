@@ -20,21 +20,21 @@ use li3b_core\models\BootstrapBlock;
  * then guess what order someone may want all the blocks to be in.
  */
 BootstrapBlock::applyFilter('order', function($self, $params, $chain) {
-	// Example ordering. Changing key values and then running a ksort(). The key values can be anything really.
-	// This ordering is only applied to the 'helloword' block position.
-	if($params['position'] == 'helloworld') {
-		$result = $chain->next($self, $params, $chain);
+    // Example ordering. Changing key values and then running a ksort(). The key values can be anything really.
+    // This ordering is only applied to the 'helloword' block position.
+    if($params['position'] == 'helloworld') {
+        $result = $chain->next($self, $params, $chain);
 
 
-		$result[0] = $result[2];
-		unset($result[2]);
+        $result[0] = $result[2];
+        unset($result[2]);
 
-		// Note the use of SORT_STRING, this will allow keys with numbers and letters to both be accounted for.
-		ksort($result, SORT_STRING);
+        // Note the use of SORT_STRING, this will allow keys with numbers and letters to both be accounted for.
+        ksort($result, SORT_STRING);
 
-		return $result;
-	}
-	return $chain->next($self, $params, $chain);
+        return $result;
+    }
+    return $chain->next($self, $params, $chain);
 });
 
 /**
@@ -52,10 +52,10 @@ BootstrapBlock::applyFilter('order', function($self, $params, $chain) {
  */
 BootstrapBlock::applyFilter('staticBlock', function($self, $params, $chain) {
 
-	if($params['position'] == 'helloworld') {
-		$self::$staticBlocks['helloworld']['zlast']['content'] = 'Last block position.';
-	}
+    if($params['position'] == 'helloworld') {
+        $self::$staticBlocks['helloworld']['zlast']['content'] = 'Last block position.';
+    }
 
-	return $chain->next($self, $params, $chain);
+    return $chain->next($self, $params, $chain);
 });
 ?>

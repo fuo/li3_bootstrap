@@ -12,28 +12,28 @@ use lithium\net\http\Media;
 use lithium\core\Environment;
 
 ErrorHandler::apply('lithium\action\Dispatcher::run', array(), function($info, $params) {
-	$response = new Response(array(
-		'request' => $params['request'],
-		'status' => $info['exception']->getCode()
-	));
-	
-	// Production error templates should follow the design of the site.
-	$error_layout = 'default';
-	$error_template = 'production';
-	
-	// Development error templates can look different.
-	if(Environment::is('development')) {
-		$error_template = 'development';
-		$error_layout = 'error';
-	}
-	
-	Media::render($response, compact('info', 'params'), array(
-		'library' => 'li3Bootstrap',
-		'controller' => '_errors',
-		'template' => $error_template,
-		'layout' => $error_layout,
-		'request' => $params['request']
-	));
-	return $response;
+    $response = new Response(array(
+        'request' => $params['request'],
+        'status' => $info['exception']->getCode()
+    ));
+
+    // Production error templates should follow the design of the site.
+    $error_layout = 'default';
+    $error_template = 'production';
+
+    // Development error templates can look different.
+    if(Environment::is('development')) {
+        $error_template = 'development';
+        $error_layout = 'error';
+    }
+
+    Media::render($response, compact('info', 'params'), array(
+        'library' => 'li3Bootstrap',
+        'controller' => '_errors',
+        'template' => $error_template,
+        'layout' => $error_layout,
+        'request' => $params['request']
+    ));
+    return $response;
 });
 ?>
